@@ -7,6 +7,7 @@ app = Flask(__name__)
  
 # Configure PostgreSQL database connection
 app.config['POSTGRESQL_HOST'] = 'localhost'
+app.config['PORT']=5433
 app.config['POSTGRESQL_USER'] = 'postgres'  # Replace with your PostgreSQL username
 app.config['POSTGRESQL_PASSWORD'] = 'root'  # Replace with your PostgreSQL password
 app.config['POSTGRESQL_DB'] = 'postgres'
@@ -15,6 +16,7 @@ app.secret_key = 'your_secret_key'  # Replace with your secret key
 def get_db_connection():
     conn = psycopg2.connect(
         host=app.config['POSTGRESQL_HOST'],
+        port=app.config['PORT'],
         user=app.config['POSTGRESQL_USER'],
         password=app.config['POSTGRESQL_PASSWORD'],
         dbname=app.config['POSTGRESQL_DB']
