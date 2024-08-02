@@ -2,11 +2,42 @@
 <html>
 <head>
     <title>Home</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+        h2 {
+            color: #333;
+            text-align: center;
+            padding: 20px;
+        }
+        p {
+            text-align: center;
+            margin: 10px;
+        }
+        a {
+            text-decoration: none;
+            color: #0074D9;
+            font-weight: bold;
+        }
+        a:hover {
+            color: #0056b3;
+        }
+        center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+    </style>
 </head>
 <body><center>
     <h2>Welcome, {{ username }}!</h2>
     <p><a href="{{ url_for('login') }}">Login</a></p>
-    <p><a href="{{ url_for('register') }}">Register</a></p></center>
+    <p><a href="{{ url_for('register') }}">Register</a></p>
     <p><a href="{{ url_for('logout') }}">Logout</a></p></center>
 </body>
 </html>
